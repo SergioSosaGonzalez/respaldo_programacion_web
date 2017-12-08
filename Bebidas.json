@@ -1,0 +1,16 @@
+{
+   "bebida":"Cerveza",
+   "inicioProduccion":"3500 a.c",
+   "ingredientes":["Lupulo","cebada","agua","trigo"],
+   "marcas":[
+           {
+                "nombre":"San Miguel",
+                "Tipo":"pilsen",
+                "Procedencia":"España
+           },{
+                "nombre":"Guiness",
+                "Tipo":"Estilo Aleman",
+                "Procedencia":"Colonia
+           }
+    ]
+}

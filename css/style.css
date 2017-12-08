@@ -1,0 +1,140 @@
+#banner{
+	background-color: black;
+	height: 20px;
+	width: 1950px;
+
+	position: relative;
+	top: -10px;
+	right: 10px;
+}
+
+
+
+#valorEdad {
+    width:25px;
+    height: 25px;
+
+    position: relative;
+    top: -10px;
+}
+.numeroCasa{
+	position: relative;
+	left: 10px;
+}
+.apellidos{
+	position: relative;
+	top: 30px
+}
+.cuerpo_formulario{
+	position: relative;
+	top: 150px;
+	left: 400px;
+}
+.EdadYSexo{
+    position: relative;
+	top: -30px;
+}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 10px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+
+  position: relative;
+  right: 50px;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.sexo{
+
+	position: relative;
+	left: 10px;
+}
+.nombre_completo{
+	position: relative;
+    top: -100px;
+    
+}
+.telefono{
+	position: relative;
+	left: 20px;
+}
+.informacion_genero{
+   position: relative;
+   top: 10px;
+}
+.municipios{
+   position: relative;
+   top: 30px;
+}
+.lEstado{
+	position: relative;
+	left: 20px;
+}
+
+.informacion_direcciones{
+   position: relative;
+   top: 40px;
+}
+
+.botones {
+	 position: relative;
+     top:100px;
+     left: 150px;
+
+}
+.apematerno{
+	position: relative; 
+	left: 21px;
+}
+.apepaterno{
+	position: relative;
+	left: 17px;
+}
+label{
+  font-style:italic;
+  font-weight:bold;
+  font-size:20px;
+  font-color:#ffffff;
+  font-family:'Helvetica','Verdana','Monaco',sans-serif;
+}
+
+.button2 {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 10px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #DC1616;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+
+  position: relative;
+  left: 50px;
+}
+
+.button2:hover {background-color:  #DC1616 }
+
+.button2:active {
+  background-color: #DC1616;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login para el formulario</title>
+	<meta charset="utf-8">
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/signin.css">
+    
+</head>
+<body>
+<script  type="text/javascript">
+function redireccionar() 
+{
+   window.location="http://localhost/programacion%20web/formulario.html";
+} 
+        function validar()
+        {  
+        	
+        	var usuario = document.getElementById('inputEmail').value;
+           	var contrasena = document.getElementById('inputPassword').value;
+           	var validarUsuario= usuario;
+           	var validarContrasena = contrasena;
+           	if (validarUsuario=="13301068" && validarContrasena=="9505") 
+           	{
+           	    document.write(" ");
+           	    redireccionar();	
+           	}
+           	else
+           	{ 
+           		alert("Contraseña o usuario incorrecto");
+           	}
+        }
+        
+
+
+</script>
+<div class="container">
+   <form class="form-signin">
+        <h2 class="form-signin-heading">Usuario y contraseña</h2>
+        <label >Correo: </label>
+        <input type="text" id="inputEmail" class="form-control" placeholder="Correo Electronico" required autofocus>
+        <label>Contraseña: </label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+        <button id="bLoguear" onclick = "validar();" class="btn btn-lg btn-primary btn-block">Entrar</button>
+      </form>
+</div>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,29 @@
+body {
+  padding-bottom: 40px;
+  color: #000;
+  background-color:#E0E7E9;
+  width: 100%;
+  height: 100%;
+  }
+.arriba{
+	height: 5%;
+}
+.imagen-texto{
+
+}
+.tamano{
+	width: 100%;
+	height: 100%;
+}
+.slider-2{
+	margin-top: 3rem;
+}
+.carousel-inner .item img{
+	width: 100%;
+	height: 400px;
+}
+#circulo{
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+}

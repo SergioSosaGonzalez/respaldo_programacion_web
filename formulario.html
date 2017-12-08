@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario by Sergio Sosa </title>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+    <script src="js/ckfinder.js"></script>
+    <style type="text/css">
+       	body
+    	{
+    		background-image: url("img/fondoFormulario.jpg");
+    		position: relative;
+    		top: 50px;
+    		 
+    	}
+    	label{
+    		font-style:italic;
+            font-weight:bold;
+            font-size:17px;
+            font-color:#ffffff;
+            font-family:'Helvetica','Verdana','Monaco',sans-serif;
+    	}
+
+    	#rango{
+    		width: 100px;
+    		position: relative;
+    		top: -25px;
+    	    left: 50px;
+    	}
+    	#salidaEdad{
+    		position: relative;
+    		top: -50px;
+    		left: 160px
+
+    	}
+    </style>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<!--Codigo javascript para validación-->
+<script type="text/javascript">
+function conexion()
+{
+  window.location="http://localhost/programacionWeb/conn_db.php";
+}
+
+function limpiar()
+{
+  /*
+  var nombre_completo=document.getElementById("nombre_completo").value = " ";
+  var Apellido_paterno= document.getElementById("Apellido_paterno").value=" ";
+  var Apellido_materno= document.getElementById("Apellido_materno").value = " ";
+  var correo = document.getElementById("correo").value = " ";
+  var telefono = document.getElementById("telefono").value = " ";
+  var direccion = document.getElementById("direccion").value = " ";
+  var numeroCasa = document.getElementById("numeroCasa").value = " ";
+  var municipio = document.getElementById("municipio").value = 0;
+  var estado = document.getElementById("Estado").value = 0;
+  var rango1= document.getElementById("salidaEdad").value  = 0;
+  var rango= document.getElementById("rango").value=0;
+  var sexoM = document.getElementById("m").checked=false;
+var sexof = document.getElementById("f").checked=false;
+*/
+ alert('1');
+}
+
+
+
+var nombre_completo=document.getElementById("nombre_completo").value;
+var Apellido_paterno= document.getElementById("Apellido_paterno").value;
+var Apellido_materno= document.getElementById("Apellido_materno").value;
+var correo = document.getElementById("correo").value;
+var telefono = document.getElementById("telefono").value;
+var direccion = document.getElementById("direccion").value;
+var numeroCasa = document.getElementById("numeroCasa").value;
+var municipio = document.getElementById("municipio").value;
+var estado = document.getElementById("Estado").value;
+var rango = document.getElementById("salidaEdad").value;
+var sexoM = document.getElementById("m").checked;
+var sexof = document.getElementById("f").checked;
+var url= document.getElementById("img_index").value;
+
+if(nombre_completo =="" || Apellido_paterno=="" || Apellido_materno=="" || telefono=="" || correo== "" || direccion == "" || numeroCasa=="" || municipio==0 || url=="" || estado==0 || rango==0 || sexoM=="" && sexof=="")
+  {
+    alert("Todos los campos son obligatorios");
+    return false;
+  }
+
+
+ function validarSiNumero(e)
+ {
+    key = e.keycode || e.which;
+    teclado = String.fromCharCode(key);
+    numero ="0123456789";
+    especiales = "8-33-38-46";
+    teclado_especial = false;
+
+    for(var i in especiales)
+    {
+      if(key==especiales[i]){
+          teclado_especial=true;
+      }
+    }
+
+    if(numero.indexOf(teclado)==-1 && !teclado_especial){
+      return false;
+    }
+
+    
+  }  
+
+  function validarSiLetra(e)
+ {
+    key = e.keycode || e.which;
+    teclado = String.fromCharCode(key);
+    letras ="@ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz";
+    especiales = "8-37-38-46";
+    teclado_especial = false;
+
+    for(var i in especiales)
+    {
+      if(key==especiales[i]){
+          teclado_especial=true;
+      }
+    }
+
+    if(letras.indexOf(teclado)==-1 && !teclado_especial){
+      return false;
+    }
+    
+
+    
+  }  
+</script>
+
+  <div class="container"  id="contenedor"> 
+  <form method="post" action="conexion_pdo.php" oninput="edad.value=parseInt(rangoEdad.value);">
+	 <!--Etiquetas y texts del nombre y apellidos-->
+	 <div class="row">
+	   <div class="col-md-3"></div>
+	   <div class="col-md-6">
+	   <input type="text" id="nombre_completo" name="nombre" placeholder="Nombre completo"  onkeypress="return validarSiLetra(event);" name="txtNombre" required>
+
+	   </div>
+	 </div> 
+	  
+	   </br>
+	   </br>
+
+   <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-3">
+      <input type="text" id="Apellido_paterno" name="apePaterno" class="apepaterno" placeholder="Apellido paterno" onkeypress ="return validarSiLetra(event);" name="txtAppat" required>
+	  </div>
+	  <div class="col-md-3">
+	  	<input type="text" class="apematerno" name="apeMaterno" id="Apellido_materno" placeholder="Apellido materno" onkeypress ="return validarSiLetra(event);" name="txtApmat" required>
+	  </div>
+   </div>
+	 
+    </br>
+    </br>
+
+     <!--Parte donde va edad, tipo de sexo, correo y telefono -->
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+      	      <label>Edad: </label>
+      	      <input id="rango" type="range" name="rangoEdad" value="0" min="0" max="100">
+      	      <output id="salidaEdad" name="edad">0</output>
+      	</div>
+      	<div class="col-md-3">
+      	    <label class="sexo">Sexo: </label>
+      	    <input class="sexo" type="radio" name="sexo" value="0" id="0"><label  class="sexo">M</label>
+      	    <input class="sexo" type="radio" name="sexo"  value="1" id="1"><label  class="sexo">F</label>
+       </div>
+    </div>
+
+    
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-3">
+       	<input type="email" placeholder="Correo electronico" name="correo" id="correo" name="correo">
+      </div>
+      <div class="col-md-3">
+        <input type="tel" placeholder="Telefono" name="telefono" id="telefono" onkeypress="return validarSiNumero(event);" name="telefono" required>
+      </div>
+    </div>
+    
+    </br>
+    </br>
+
+    <!--Parte donde va la direccion, municipio y estado-->
+    <div class="row">
+        <div class="col-md-3"></div>
+    	<div class="col-md-3">
+    		<input type="text" placeholder="Dirección" id="direccion" name="direccion" required>
+    	</div>
+    	<div class="col-md-3">
+    		<input type="text" class="numeroCasa" id="numeroCasa" placeholder="Numero de casa" onkeypress ="return validarSiNumero(event);" name="numero_casa" required>
+    	</div>
+    </div>	
+        </br>
+        </br>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+    	<div class="col-md-3">
+    		<label>Municipio: </label>
+    		<select name="municipio" id="municipio">
+    		         <option value="0"></option>
+    			       <option value="Macuspana">Macuspana</option> 
+                 <option value="Centro">Centro</option> 
+                 <option value="Tacotalpa">Tacotalpa</option>
+                 <option value="Emiliano Zapata">Emiliano Zapata</option>
+                 <option value="Jonuta">Jonuta</option>
+                 <option value="Centla">Centla</option>
+                 <option value="Jalpa">Jalpa</option>
+                 <option value="Comalcalco">Comalcalco</option>
+                 <option value="Paraiso">Paraiso</option>
+                 <option value="Cardenas">Cardenas</option>
+                 <option value="Cunduacan">Cunduacan</option>
+            </select>
+        </div>    
+        
+        <div class="col-md-3">
+            <label class="lEstado">Estado: </label>
+            <select class="lEstado" name="estado" id="Estado">
+            	<option value="0"> </option>
+            	<option value = "Tabasco">Tabasco</option>
+            </select>
+        </div>    
+    </div>
+
+    </br>
+
+    <div class="row">
+    <div class="col-md-3">
+      
+    </div>
+      <div class="col-md-7">
+         <label>Fecha de nacimiento: </label>
+         <input type="date" name="fecha_nacimiento" placeholder="Fecha de nacimiento" required>
+         <input type="text" name="imagen" id="img_index" placeholder="Url de la imagen" required>
+         <script type="text/javascript">
+           function openPopup() {
+             CKFinder.popup( {
+                 chooseFiles: true,
+                 onInit: function( finder ) {
+                     finder.on( 'files:choose', function( evt ) {
+                         var file = evt.data.files.first();
+                         document.getElementById( 'img_index' ).value = file.getUrl();
+                     } );
+                     finder.on( 'file:choose:resizedImage', function( evt ) {
+                         document.getElementById( 'img_index' ).value = evt.data.resizedUrl;
+                     } );
+                 }
+             } );
+         }
+         </script>
+         <button onclick="openPopup();">Buscar</button>
+      </div>
+      
+    </div>
+ </br>
+    <div class="row">
+       <div class="col-md-3">
+          
+        </div>
+        <div class="col-md-3">
+          <input type="text" name="nombre_usuario" placeholder="Usuario">
+        </div>
+        <div class="col-md-3"> <input type="password" name="password" placeholder="password"></div>
+      
+    </div>     
+
+
+    <!--Botones-->
+    </br>
+    <div class="row">
+        <div class="col-md-3">
+        	
+        </div>
+       	<div class="col-md-3">
+    	   <input type="submit" class="btn btn-success"  name="button" value="Enviar">
+    	</div>
+    	<div class="col-md-3">
+    		<input type="button" class="btn btn-info" onclick= "limpiar();" value="Limpiar">
+    	</div>
+    </div>
+</br>
+    
+
+</form> 
+</div>  
+
+</body>
+
+<script type="text/javascript">
+	function redireccionar() 
+  {
+     window.location="http://localhost/programacionWeb/Editar_eliminar.php";
+}   
+</script>
+</html>
